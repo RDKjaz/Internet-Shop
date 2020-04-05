@@ -31,7 +31,7 @@ namespace MyFirstSite.Controllers
 
             if (string.IsNullOrEmpty(category))
             {
-                products = _allProducts.Products.OrderBy(i => i.ProductId);
+                products = _allProducts.Products.OrderBy(a => Guid.NewGuid());
                 currCategory = "Все товары";
             }
             else
@@ -39,28 +39,50 @@ namespace MyFirstSite.Controllers
 
                 if (string.Equals("Maski", category, StringComparison.OrdinalIgnoreCase))
                 {
-                    products = _allProducts.Products.Where(i => i.Category.CategoryName.Equals("Маски")).OrderBy(i => i.ProductId);
+                    products = _allProducts.Products.Where(i => i.Category.CategoryName.Equals("Маски")).OrderBy(a => Guid.NewGuid()); ;
                     currCategory = "Маски";
                 }
 
 
-
                 else if (string.Equals("Anti", category, StringComparison.OrdinalIgnoreCase))
                 {
-                    products = _allProducts.Products.Where(i => i.Category.CategoryName.Equals("Антисептики")).OrderBy(i => i.ProductId);
+                    products = _allProducts.Products.Where(i => i.Category.CategoryName.Equals("Антисептики")).OrderBy(a => Guid.NewGuid());
                     currCategory = "Антисептики";
                 }
 
 
-
-                else if (string.Equals("Other", category, StringComparison.OrdinalIgnoreCase))
+                else if (string.Equals("Costume", category, StringComparison.OrdinalIgnoreCase))
                 {
-                    products = _allProducts.Products.Where(i => i.Category.CategoryName.Equals("Другое")).OrderBy(i => i.ProductId);
-                    currCategory = "Другое";
+                    products = _allProducts.Products.Where(i => i.Category.CategoryName.Equals("Защитные костюмы")).OrderBy(a => Guid.NewGuid());
+                    currCategory = "Защитные костюмы";
+                }
+
+                else if (string.Equals("Gigiena", category, StringComparison.OrdinalIgnoreCase))
+                {
+                    products = _allProducts.Products.Where(i => i.Category.CategoryName.Equals("Средства личной гигиены")).OrderBy(a => Guid.NewGuid());
+                    currCategory = "Средства личной гигиены";
+                }
+
+                else if (string.Equals("Food", category, StringComparison.OrdinalIgnoreCase))
+                {
+                    products = _allProducts.Products.Where(i => i.Category.CategoryName.Equals("Пропитание")).OrderBy(a => Guid.NewGuid());
+                    currCategory = "Пропитание";
+                }
+
+
+                else if (string.Equals("TableGames", category, StringComparison.OrdinalIgnoreCase))
+                {
+                    products = _allProducts.Products.Where(i => i.Category.CategoryName.Equals("Настольные игры")).OrderBy(a => Guid.NewGuid());
+                    currCategory = "Настольные игры";
+                }
+                else if (string.Equals("Alcohol", category, StringComparison.OrdinalIgnoreCase))
+                {
+                    products = _allProducts.Products.Where(i => i.Category.CategoryName.Equals("Алкоголь")).OrderBy(a => Guid.NewGuid());
+                    currCategory = "Алкоголь";
                 }
 
                 else
-                { products = _allProducts.Products.OrderBy(i => i.ProductId); currCategory = "Все товары"; }
+                { products = _allProducts.Products.OrderBy(a => Guid.NewGuid()); currCategory = "Все товары"; }
 
             }
 

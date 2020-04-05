@@ -18,15 +18,16 @@ namespace MyFirstSite.Controllers
         {
             _productRep = productRep;
         }
-
+        Random rnd = new Random();
         
 
         public ViewResult Index()
         {
             var homeProducts = new ProductsViewModel
             {
-                products = _productRep.Products
+                products = _productRep.Products.OrderBy(a => Guid.NewGuid())
             };
+
             return View(homeProducts);
         }
 
@@ -34,7 +35,7 @@ namespace MyFirstSite.Controllers
         {
             var homeProducts = new ProductsViewModel
             {
-                products = _productRep.getFavProducts
+                products = _productRep.getFavProducts.OrderBy(a => Guid.NewGuid())
             };
             return View(homeProducts);
         }

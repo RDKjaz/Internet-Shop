@@ -1,3 +1,103 @@
 ﻿@{
-    ViewData["Title"] = "STOP COVID-19";
+    ViewData["Title"] = "AntiCovid-19 Shop";
+    Layout = null;
 }
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="icon" href="~/2.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="~/2.ico" type="image/x-icon">
+
+</head>
+<body>
+    <header>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </header>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="/Home/Index"><img src="~/img/corona.png" height="45" width="45" />AntiCovid-19<br/><p align="center"> Shop</p></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Products/Index1">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Products">Все товары</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Категории
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/Category/List/Maski">Маски</a>
+                        <a class="dropdown-item" href="/Category/List/Anti">Антисептики</a>
+                        <a class="dropdown-item" href="/Category/List/Costume">Защитные костюмы</a>
+                        <a class="dropdown-item" href="/Category/List/Gigiena">Средства личной гигиены</a>
+                        <a class="dropdown-item" href="/Category/List/Food">Пропитание</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/Category/List/TableGames">Настольные игры</a>
+                        <a class="dropdown-item" href="/Category/List/Alcohol">Алкоголь</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/AboutUs/Index">О нас</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <a href="/ShopCart"><img src="~/img/корзина.png" height="35" width="35" /></a>
+            </form>
+        </div>
+    </nav>
+    <div>
+        <img src="img/home/sh1.jpeg" height="400px" width="100%" alt="" id="slide_show"><br>
+    </div>
+
+
+
+    <div align ="center">
+        <h3>COVID-19 уже называют чумой 21 века. И это не случайно. Более 1000000 заболевших он нового вируса, сотни тысяч погибших. 
+        В это непростое время так важно разумно подойти к такой непростой проблеме. Наш магазин предлагает вам все самое необходимое, 
+        чтобы вы смогли защититься от этой пугающей болезни. 
+        Мы пытаемся внести свой вклад в победу над вирусом. У нас вы сможете найти средства защиты и 
+        товары первой необходимости по самым приятным ценам.</h3>
+    </div>
+
+    <script type="text/javascript">
+        var imgs = ["img/home/sh1.jpeg", "img/home/sh2.jpg", "img/home/sh3.jpg", "image/img_4.png"];
+        var n = 0;
+        time = 800;
+        play = setInterval("chgImg(0)", 5000);
+        function chgImg(number) {
+            if (number != 0) n = number - 2;
+            $('#slide_show').fadeOut(time, function () {    //для картинок
+                $(this).attr('src', imgs[n]).fadeIn(time);
+            });
+            n++;
+            if (n >= imgs.length) n = 0;
+        }
+    </script>
+
+
+    <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>© 2020 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+        <p>
+            <form class="form-inline my-2 my-lg-0">
+                <a href="https://www.instagram.com/stopcoronavirusrf/"><img src="~/img/inst.png" height="35" width="35" /></a>
+            </form>
+        </p>
+    </footer>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
+

@@ -1,11 +1,13 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Routing;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -42,6 +44,7 @@ namespace MyFirstSite
             services.AddMvc();
             services.AddMemoryCache();
             services.AddSession();
+            services.AddRouting();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -63,10 +66,13 @@ namespace MyFirstSite
             
             app.UseSession();
 
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
+
             app.UseRouting();
+
 
             app.UseAuthorization();
 
@@ -82,6 +88,13 @@ namespace MyFirstSite
                 DataBaseContext context = scope.ServiceProvider.GetRequiredService<DataBaseContext>();
                 DBObjects.Initial(context);
             }
+
+
+            //app.UseMvc(routes => {
+            //    routes.MapRoute(name: "default", template: "{controller=dom}/{action=index}/{id?}");
+            //    routes.MapRoute(name: "categoryfilter", template: "tovar/{action}/{category?}", defaults: new { controller = "tovar", action = "list" });
+
+            //});
         }
     }
 }
