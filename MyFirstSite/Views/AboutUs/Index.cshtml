@@ -1,3 +1,100 @@
-﻿<h3>@ViewBag.Message</h3>
+﻿@{ 
+    Layout = null;
+}
+<!DOCTYPE html>
 
-<h6>Hello</h6>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AntiCovid-19 Shop</title>
+    <link rel="icon" href="/img/2.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="~/2.ico" type="image/x-icon">
+    <link rel="stylesheet" href="Design/payne/assets/css/vendor.css">
+
+
+</head>
+<body>
+    <header>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    </header>
+
+
+    <nav class="navbar align-content-sm-center navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/Home"><img src="~/img/corona.png" height="45" width="45" /></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/Products/Index1">Главная</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Products">Все товары</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Категории
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="/Category/List/Maski">Маски</a>
+                        <a class="dropdown-item" href="/Category/List/Anti">Антисептики</a>
+                        <a class="dropdown-item" href="/Category/List/Costume">Защитные костюмы</a>
+                        <a class="dropdown-item" href="/Category/List/Gigiena">Средства личной гигиены</a>
+                        <a class="dropdown-item" href="/Category/List/Food">Пропитание</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="/Category/List/TableGames">Настольные игры</a>
+                        <a class="dropdown-item" href="/Category/List/Alcohol">Алкоголь</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/AboutUs/Index">О нас</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0">
+                <a href="/ShopCart"><img src="~/img/корзина.png" height="35" width="35" /></a>
+            </form>
+        </div>
+    </nav>
+
+
+
+    <div>
+        <div style="height: 220px; text-align: center;">
+            <img src="/img/Home/sh1.jpeg" alt="" width="100%" id="slide_show"><br>
+
+
+        </div>
+        <script type="text/javascript">
+            var imgs = ["/img/Home/sh1.jpeg", "/img/Home/sh2.jpg", "/img/Home/sh3.jpg"];
+
+            var n = 0;
+            time = 500;
+            play = setInterval("chgImg(0)", 3000);
+
+            function chgImg(number) {
+                if (number != 0) n = number - 2;
+                $('#slide_show').fadeOut(time, function () {    //для картинок
+                    $(this).attr('src', imgs[n]).fadeIn(time);
+                });
+
+
+                n++;
+                if (n >= imgs.length) n = 0;
+            }
+        </script>
+
+
+    </div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
+</body>
+</html>
+
+

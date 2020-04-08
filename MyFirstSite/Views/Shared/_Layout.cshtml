@@ -3,9 +3,11 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>@ViewBag.Title</title>
+    <title>AntiCovid-19 Shop</title>
     <link rel="icon" href="~/2.ico" type="image/x-icon">
     <link rel="shortcut icon" href="~/2.ico" type="image/x-icon">
+    <link rel="stylesheet" href="Design/payne/assets/css/vendor.css">
+
 
 </head>
 <body>
@@ -13,8 +15,9 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     </header>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="/Home/Index"><img src="~/img/corona.png" height="45" width="45" />AntiCovid-19<br /><p align="center"> Shop</p></a>
+
+    <nav class="navbar align-content-sm-center navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/Home"><img src="~/img/corona.png" height="45" width="45" /></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -55,17 +58,22 @@
     <div class="container mt-5">
         @RenderBody()
     </div>
+
+
     <footer class="container">
         <p class="float-right"><a href="#">Back to top</a></p>
-        <p>© 2020 Company, Inc. · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+        <p>AntiCovid-19 Shop © 2020 Все права защищены.</p>
         <p>
             <form class="form-inline my-2 my-lg-0">
                 <a href="https://www.instagram.com/stopcoronavirusrf/"><img src="~/img/inst.png" height="35" width="35" /></a>
             </form>
         </p>
     </footer>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"> </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+
 </body>
 </html>

@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using MyFirstSite.Models;
 using MyFirstSite.Models.Interfaces;
 using MyFirstSite.Models.ViewModels;
 using System;

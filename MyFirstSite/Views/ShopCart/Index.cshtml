@@ -3,6 +3,7 @@
     @foreach (var el in Model.shopCart.listShopItems)
     {
         <div class="alert alert-warning mt-3">
+            <img src="@el.product.Img" width="200" height="200"> <br />
             <b>Товар:</b> @el.product.Name <br />
             <b>Цена:</b> @el.product.Price.ToString("c")
         </div>
