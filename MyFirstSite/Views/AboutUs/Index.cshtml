@@ -51,7 +51,41 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/AboutUs/Index">О нас</a>
                 </li>
+                @if (User.IsInRole("admin"))
+                {
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Для админа
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/Products1/">Товары</a>
+                            <a class="dropdown-item" href="/Users">Пользователи</a>
+                        </div>
+                    </li>
+                }
+
             </ul>
+            @if ((User.IsInRole("admin")) || (User.IsInRole("user")))
+            {
+
+                <div style="margin-right:10px">
+                    <form method="post" asp-controller="Account" asp-action="Logout">
+                        <input type="submit" value="Выход" />
+                    </form>
+                </div>
+            }
+            @if ((User.IsInRole("admin")) || (User.IsInRole("user")))
+            {
+                string phrase = User.Identity.Name;
+                string[] words = phrase.Split('@');
+                string a = words[0];
+                <a style="margin-right: 20px">Здравствуйте, @a</a>
+            }
+            @if ((!(User.IsInRole("admin"))) && (!(User.IsInRole("user"))))
+            {
+                <a style="margin-right: 20px" href="/Account/Login">Войти</a>
+            }
             <form class="form-inline my-2 my-lg-0">
                 <a href="/ShopCart"><img src="~/img/корзина.png" height="35" width="35" /></a>
             </form>

@@ -42,5 +42,43 @@ namespace MyFirstSite.Models
                 return category;
             }
         }
+
+        public static void In2(DataBaseContext context)
+        {
+            if (!context.Roles.Any())
+                context.Roles.AddRange(Roles.Select(c => c.Value));
+
+            
+
+            if (!context.Users.Any())
+                context.AddRange(
+                    new User { Email = "Radik@gmail.com", Password = "7777", Role = Roles["admin"] },
+                    new User { Email = "Ksu@gmail.com", Password = "1234", Role = Roles["user"] }
+                    );
+
+            context.SaveChanges();
+        }
+
+
+        public static Dictionary<string, Role> roles;
+        public static Dictionary<string, Role> Roles
+        {
+            get
+            {
+                if (roles == null)
+                {
+                    var list = new Role[]
+                    {
+                        new Role {Name = "admin",Desc=""},
+                        new Role {Name = "user",Desc=""}
+                    };
+                    roles = new Dictionary<string, Role>();
+                    foreach (Role el in list)
+                        roles.Add(el.Name, el);
+                }
+                return roles;
+            }
+        }
+
     }
 }

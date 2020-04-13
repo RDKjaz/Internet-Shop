@@ -11,7 +11,7 @@ namespace MyFirstSite.Controllers
         public IActionResult Index()
         {
             ViewBag.Message = "";
-            return View();
+            return View("Index");
         }
     }
 }

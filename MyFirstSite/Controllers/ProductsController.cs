@@ -12,12 +12,10 @@ namespace MyFirstSite.Controllers
     {
         private IAllProducts _productRep;
 
-
         public ProductsController(IAllProducts productRep)
         {
             _productRep = productRep;
         }
-        Random rnd = new Random();
         
 
         public ViewResult Index()
@@ -38,6 +36,5 @@ namespace MyFirstSite.Controllers
             };
             return View(homeProducts);
         }
-
     }
 }

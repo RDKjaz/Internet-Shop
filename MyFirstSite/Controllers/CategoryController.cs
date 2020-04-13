@@ -14,6 +14,7 @@ namespace MyFirstSite.Controllers
         private readonly IAllProducts _allProducts;
         private readonly ICategories _allCategories;
 
+
         public CategoryController(IAllProducts iAllProducts, ICategories iCategory)
         {
             _allProducts = iAllProducts;
