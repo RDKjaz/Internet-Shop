@@ -73,17 +73,12 @@
                                                         <a href="/Category/List/Costume">Защитные костюмы</a>
                                                     </li>
                                                     <li class="has-children">
-                                                        <a href="/Category/List/Gigiena">Средства личной гигиены</a>
+                                                        <a href="/Category/List/Medicine">Лекарства</a>
                                                     </li>
                                                     <li class="has-children">
-                                                        <a href="/Category/List/Food">Пропитание</a>
+                                                        <a href="/Category/List/Gloves">Перчатки</a>
                                                     </li>
-                                                    <li class="has-children">
-                                                        <a href="/Category/List/TableGames">Настольные игры</a>
-                                                    </li>
-                                                    <li class="has-children">
-                                                        <a href="/Category/List/Alcohol">Алкоголь</a>
-                                                    </li>
+                                                    
                                                 </ul>
                                             </div>
                                         </li>
@@ -126,7 +121,7 @@
                                     
                                     <div class="toolbar-item d-none d-lg-block">
                                         <form method="post" asp-controller="Account" asp-action="Logout">
-                                            <input type="submit" value="Выход" />
+                                            <input style="background-color:white;" type="submit" value="Выйти" />
                                         </form>
                                     </div>
                                 }
@@ -237,10 +232,9 @@
                             </div>
                             <div class="address-widget">
                                 <address>Казань</address>
-                                <a href="tel:+89178965263">89178965263</a>
                                 <a href="tel:+89178964743">89178964743</a>
-                                <a href="mailto:Babksyu@gmail.com">babksyu@gmail.com</a>
-                                <a href="mailto:Babksyu@gmail.com">RDKJaz@gmail.com</a>
+                                
+                                <a href="mailto:RDKJaz@gmail.com">RDKJaz@gmail.com</a>
                             </div>
                         </div>
                     </div>
@@ -299,17 +293,12 @@
                                     <a href="/Category/List/Costume">
                                         <span class="overlay-menu__title">Защитные костюмы</span>
                                     </a>
-                                    <a href="/Category/List/Gigiena">
-                                        <span class="overlay-menu__title">Средства личной гигиены</span>
+
+                                    <a href="/Category/List/Medicine">
+                                        <span class="overlay-menu__title">Лекарства</span>
                                     </a>
-                                    <a href="/Category/List/Food">
-                                        <span class="overlay-menu__title">Пропитание</span>
-                                    </a>
-                                    <a href="/Category/List/TableGames">
-                                        <span class="overlay-menu__title">Настольные игры</span>
-                                    </a>
-                                    <a href="/Category/List/Alcohol">
-                                        <span class="overlay-menu__title">Алкоголь</span>
+                                    <a href="/Category/List/Gloves">
+                                        <span class="overlay-menu__title">Перчатки</span>
                                     </a>
                                 </li>
                             </ul>
@@ -324,6 +313,52 @@
                                 <span class="mm-text">Корзина</span>
                             </a>
                         </li>
+                        
+
+                        @if (User.IsInRole("admin"))
+                        {
+                            <li>
+                                <a href="#">Для админа:</a>
+                            </li>
+                            <li>
+                                <a href="/Products1">Товары</a>
+                            </li>
+                            <li>
+                                <a href="/Users">Пользователи</a>
+                            </li>
+                        }
+                        
+                            @if ((!(User.IsInRole("admin"))) && (!(User.IsInRole("user"))))
+                            {
+
+                    <li>
+                        <a href="/Account/Login" class="toolbar-btn">
+                            Войти
+                        </a>
+                    </li>
+                                
+                            }
+
+                            @if ((User.IsInRole("admin")) || (User.IsInRole("user")))
+                            {
+
+                    <li>
+                        <form method="post" asp-controller="Account" asp-action="Logout">
+                            <input style="background-color:white;" type="submit" value="Выход" />
+                        </form>
+                    </li>
+                            }
+                        
+
+                            @if ((User.IsInRole("admin")) || (User.IsInRole("user")))
+                            {
+                                string phrase = User.Identity.Name;
+                                string[] words = phrase.Split('@');
+                                string a = words[0];
+                    <li>
+                        Здравствуйте, @a
+                    </li>
+                            }
                     </ul>
                 </div>
             </div>

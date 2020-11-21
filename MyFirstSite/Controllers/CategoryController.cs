@@ -58,29 +58,20 @@ namespace MyFirstSite.Controllers
                     currCategory = "Защитные костюмы";
                 }
 
-                else if (string.Equals("Gigiena", category, StringComparison.OrdinalIgnoreCase))
+                else if (string.Equals("Medicine", category, StringComparison.OrdinalIgnoreCase))
                 {
-                    products = _allProducts.Products.Where(i => i.Category.CategoryName.Equals("Средства личной гигиены")).OrderBy(a => Guid.NewGuid());
-                    currCategory = "Средства личной гигиены";
+                    products = _allProducts.Products.Where(i => i.Category.CategoryName.Equals("Лекарства")).OrderBy(a => Guid.NewGuid());
+                    currCategory = "Лекарства";
                 }
 
-                else if (string.Equals("Food", category, StringComparison.OrdinalIgnoreCase))
+                else if (string.Equals("Gloves", category, StringComparison.OrdinalIgnoreCase))
                 {
-                    products = _allProducts.Products.Where(i => i.Category.CategoryName.Equals("Пропитание")).OrderBy(a => Guid.NewGuid());
-                    currCategory = "Пропитание";
+                    products = _allProducts.Products.Where(i => i.Category.CategoryName.Equals("Перчатки")).OrderBy(a => Guid.NewGuid());
+                    currCategory = "Перчатки";
                 }
 
 
-                else if (string.Equals("TableGames", category, StringComparison.OrdinalIgnoreCase))
-                {
-                    products = _allProducts.Products.Where(i => i.Category.CategoryName.Equals("Настольные игры")).OrderBy(a => Guid.NewGuid());
-                    currCategory = "Настольные игры";
-                }
-                else if (string.Equals("Alcohol", category, StringComparison.OrdinalIgnoreCase))
-                {
-                    products = _allProducts.Products.Where(i => i.Category.CategoryName.Equals("Алкоголь")).OrderBy(a => Guid.NewGuid());
-                    currCategory = "Алкоголь";
-                }
+        
 
                 else
                 { products = _allProducts.Products.OrderBy(a => Guid.NewGuid()); currCategory = "Все товары"; }

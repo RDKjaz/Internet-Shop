@@ -5,6 +5,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="wwwroot\img\Alcohol\**" />
+    <Compile Remove="wwwroot\img\Food\**" />
+    <Compile Remove="wwwroot\img\Gigiena\**" />
+    <Content Remove="wwwroot\img\Alcohol\**" />
+    <Content Remove="wwwroot\img\Food\**" />
+    <Content Remove="wwwroot\img\Gigiena\**" />
+    <EmbeddedResource Remove="wwwroot\img\Alcohol\**" />
+    <EmbeddedResource Remove="wwwroot\img\Food\**" />
+    <EmbeddedResource Remove="wwwroot\img\Gigiena\**" />
+    <None Remove="wwwroot\img\Alcohol\**" />
+    <None Remove="wwwroot\img\Food\**" />
+    <None Remove="wwwroot\img\Gigiena\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="JSON" Version="1.0.1" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Abstractions" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.Http.Extensions" Version="2.2.0" />
@@ -23,9 +38,6 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\img\Costume\" />
-    <Folder Include="wwwroot\img\Gigiena\" />
-    <Folder Include="wwwroot\img\Food\" />
-    <Folder Include="wwwroot\img\Alcohol\" />
   </ItemGroup>
 
 </Project>

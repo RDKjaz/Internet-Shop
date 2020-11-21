@@ -3,24 +3,26 @@
     <div style="text-align: center">
         <h2>Вход на сайт</h2>
 
-        <a style="margin-bottom:10px;margin-top:5px; text-align: center" asp-action="Register" asp-controller="Account">Регистрация</a>
 
         <form asp-action="Login" asp-controller="Account" asp-anti-forgery="true">
-            <div class="validation" asp-validation-summary="ModelOnly"></div>
+            <div style="padding:16px;"  asp-validation-summary="ModelOnly"></div>
             <div>
                 <div class="form-group">
-                    <label asp-for="Email">Введите Email</label>
-                    <input type="text" asp-for="Email" />
+                    <label><b>Email</b></label>
+                    <br />
+                    <input style="width: 35%; padding: 15px; margin: 5px 0 22px 0; display: inline-block; border: none; background: #f1f1f1;" type="text" placeholder="Введите Email" asp-for="Email" />
                     <span asp-validation-for="Email" />
                 </div>
                 <div class="form-group">
-                    <label asp-for="Password">Введите пароль</label>
-                    <input asp-for="Password" />
+                    <label><b>Пароль</b></label>
+                    <br />
+                    <input style="width: 35%; padding: 15px; margin: 5px 0 22px 0; display: inline-block; border: none; background: #f1f1f1;" placeholder="Введите пароль" asp-for="Password" />
                     <span asp-validation-for="Password" />
                 </div>
                 <div class="form-group">
-                    <input type="submit" value="Войти" class="btn" />
+                    <input style=" width:20%; color:white; background-color: red; padding: 16px 20px; margin: 8px 0; border: none; cursor: pointer;  opacity: 0.9;" type="submit" value="Войти" class="btn"/>
                 </div>
+                <a style="margin-bottom:10px;margin-top:5px; text-align: center" asp-action="Register" asp-controller="Account">Регистрация</a>
             </div>
         </form>
     </div>

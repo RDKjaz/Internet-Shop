@@ -15,9 +15,9 @@ namespace MyFirstSite.Models
 
             if (!context.Product.Any())
                 context.AddRange(
-                    new Product { Name = "Маска", ShortDesc = "", LongDesc = "", Img = "/img/Maska.jpg", Price = 500, IsFavourite = true, Available = true, Category = Categories["Маски"] },
-                    new Product { Name = "Антисептик", ShortDesc = "", LongDesc = "", Img = "/img/Maska.jpg", Price = 150, IsFavourite = true, Available = true, Category = Categories["Антисептики"] }, 
-                    new Product { Name = "Костюм", ShortDesc = "", LongDesc = "", Img = "/img/Maska.jpg", Price = 50000, IsFavourite = true, Available = true, Category = Categories["Другое"] }
+                    new Product { Name = "Маска", ShortDesc = "", LongDesc = "", Img = "~/img/Maska.jpg", Price = 500, IsFavourite = true, Available = true, Category = Categories["Маски"] },
+                    new Product { Name = "Антисептик", ShortDesc = "", LongDesc = "", Img = "/~img/Maska.jpg", Price = 150, IsFavourite = true, Available = true, Category = Categories["Антисептики"] }, 
+                    new Product { Name = "Костюм", ShortDesc = "", LongDesc = "", Img = "/~img/Maska.jpg", Price = 50000, IsFavourite = true, Available = true, Category = Categories["Другое"] }
                     );
             context.SaveChanges();
         }

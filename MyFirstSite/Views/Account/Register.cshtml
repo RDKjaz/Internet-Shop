@@ -7,23 +7,34 @@
             <div class="validation" asp-validation-summary="ModelOnly"></div>
             <div>
                 <div>
-                    <label asp-for="Email">Введите Email</label><br />
+                    @*<label asp-for="Email">Введите Email</label><br />
                     <input type="text" asp-for="Email" />
+                    <span asp-validation-for="Email" />*@
+
+                    <label><b>Email</b></label>
+                    <br />
+                    <input style="width: 35%; padding: 15px; margin: 5px 0 22px 0; display: inline-block; border: none; background: #f1f1f1;" type="text" placeholder="Введите Email" asp-for="Email" />
                     <span asp-validation-for="Email" />
                 </div>
                 <div>
-                    <label asp-for="Password">Введите пароль</label><br />
+                    @*<label asp-for="Password">Введите пароль</label><br />
                     <input asp-for="Password" />
+                    <span asp-validation-for="Password" />*@
+
+                    <label><b>Пароль</b></label>
+                    <br />
+                    <input style="width: 35%; padding: 15px; margin: 5px 0 22px 0; display: inline-block; border: none; background: #f1f1f1;" placeholder="Введите пароль" asp-for="Password" />
                     <span asp-validation-for="Password" />
                 </div>
                 <div>
-                    <label asp-for="ConfirmPassword">Повторите пароль</label><br />
-                    <input asp-for="ConfirmPassword" />
+                    <label><b>Повторите пароль</b></label>
+                    <br />
+                    <input asp-for="ConfirmPassword" style="width: 35%; padding: 15px; margin: 5px 0 22px 0; display: inline-block; border: none; background: #f1f1f1;" placeholder="Повторите пароль" />
                     <span asp-validation-for="ConfirmPassword" />
                 </div>
-                <div style="text-align:center;margin-top:10px;margin-bottom:10px">
-                    <input type="submit" value="Регистрация" />
-                </div>
+                @*<div style="text-align:center;margin-top:10px;margin-bottom:10px">*@
+                    <input style=" width:20%; color:white; background-color: red; padding: 16px 20px; margin: 8px 0; border: none; cursor: pointer;  opacity: 0.9;" type="submit" value="Регистрация" />
+                @*</div>*@
             </div>
         </form>
     </div>
